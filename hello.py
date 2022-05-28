@@ -13,7 +13,7 @@ def hello():
     name = name.replace("-"," ").title()
     spotify_data = pd.read_csv('datasetsong.csv')
     data = recommend_songs([{'track_name':name, 'year': year}], spotify_data)
-    return ("Hiii")
+    return (jsonify(data))
 
 if __name__=="__main__":
     app.run(debug=True)
